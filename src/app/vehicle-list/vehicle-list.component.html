@@ -1,0 +1,51 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Vehicle List</h2>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-12">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      [responsive]="true"
+      (pageChange)="handlePageChange($event)"
+    ></pagination-controls>
+
+    Items per Page:
+    <select (change)="handlePageSizeChange($event)">
+      <option *ngFor="let size of pageSizes" [ngValue]="size">
+        {{ size }}
+      </option>
+    </select>
+  </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>PlateNumber</th>
+        <th>Producer</th>
+        <th>casco insurance annualPayment</th>
+        <th>casco insurance risks</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let vehicle of vehicles | paginate : {
+                  itemsPerPage: pageSize,
+                  currentPage: page,
+                  totalItems: count
+                };">
+        <td>{{vehicle.id}}</td>
+        <td>{{vehicle.plateNumber}}</td>
+        <td>{{vehicle.producer}}</td>
+        <td>{{ vehicle.cascoAnnualPayment | number :  '1.2-2'}}</td>
+        <td>{{vehicle.riskParams ? vehicle.riskParams.join(', ') : ''}}</td>
+        <td style="width: 300px"><button (click)="deleteVehicle(vehicle.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateVehicle(vehicle.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+          <button (click)="vehicleDetails(vehicle.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

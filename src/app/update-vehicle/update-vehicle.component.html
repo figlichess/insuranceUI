@@ -1,0 +1,33 @@
+<h3>Update Vehicle</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">plateNumber </label>
+      <input type="text" class="form-control" id="plateNumber" required [(ngModel)]="vehicle.plateNumber" name="plateNumber">
+    </div>
+    <div class="form-group">
+      <label for="name">firstRegistration </label>
+      <input type="text" class="form-control" id="firstRegistration" required [(ngModel)]="vehicle.firstRegistration" name="firstRegistration">
+    </div>
+    <div class="form-group">
+      <label for="name">purchasePrice </label>
+      <input type="text" class="form-control" id="purchasePrice" required [(ngModel)]="vehicle.purchasePrice" name="purchasePrice">
+    </div>
+
+    <div class="form-group">
+      <label for="name">producer </label>
+      <input type="text" class="form-control" id="producer" required [(ngModel)]="vehicle.producer" name="producer">
+    </div>
+    <div class="form-group">
+      <label for="name">mileage </label>
+      <input type="text" class="form-control" id="mileage" required [(ngModel)]="vehicle.mileage" name="mileage">
+    </div>
+
+    <div class="form-group">
+      <label for="name">previousIndemnity </label>
+      <input type="text" class="form-control" id="previousIndemnity" required [(ngModel)]="vehicle.previousIndemnity" name="previousIndemnity">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

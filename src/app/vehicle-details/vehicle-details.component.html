@@ -1,0 +1,27 @@
+<h2>Vehicle Details</h2>
+<hr/>
+<div *ngIf="vehicle">
+  <div>
+    <label><b>plateNumber: </b></label> {{vehicle.plateNumber}}
+  </div>
+  <div>
+    <label><b>firstRegistration: </b></label> {{vehicle.firstRegistration}}
+  </div>
+  <div>
+    <label><b>purchasePrice: </b></label> {{vehicle.purchasePrice}}
+  </div>
+  <div>
+    <label><b>producer: </b></label> {{vehicle.producer}}
+  </div>
+  <div>
+    <label><b>mileage: </b></label> {{vehicle.mileage}}
+  </div>
+  <div>
+    <label><b>previousIndemnity: </b></label> {{vehicle.previousIndemnity}}
+  </div>
+</div>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Vehicles List</button><br>
+
+
